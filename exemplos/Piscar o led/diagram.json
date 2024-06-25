@@ -1,0 +1,26 @@
+{
+  "version": 1,
+  "author": "Gustavo Henrique Gomes Rodrigues",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": -43.3, "left": -43.4, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -61.2, "left": 119, "attrs": { "color": "blue" } },
+    {
+      "type": "wokwi-resistor",
+      "id": "r1",
+      "top": 14.4,
+      "left": 124.25,
+      "rotate": 90,
+      "attrs": { "value": "1000" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "esp:GND.3", "led1:C", "black", [ "h0" ] ],
+    [ "led1:A", "r1:1", "green", [ "v9.6", "h9.6" ] ],
+    [ "esp:D2", "r1:2", "green", [ "h28.5", "v-0.7", "h67.2" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v124.8", "h0.4" ] ]
+  ],
+  "dependencies": {}
+}
