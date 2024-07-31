@@ -5,6 +5,9 @@ CREATE TABLE "Usuario"(
 );
 ALTER TABLE
     "Usuario" ADD PRIMARY KEY("id");
+
+
+    
 CREATE TABLE "Dispositivos"(
     "id" BIGINT NOT NULL,
     "sensorDistancia" VARCHAR(255) NOT NULL,
