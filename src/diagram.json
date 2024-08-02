@@ -1,0 +1,123 @@
+{
+    "version": 1,
+    "author": "Gustavo Henrique Gomes Rodrigues",
+    "editor": "wokwi",
+    "parts": [
+      {
+        "type": "wokwi-breadboard-mini",
+        "id": "bb1",
+        "top": 133,
+        "left": -242.4,
+        "attrs": {}
+      },
+      {
+        "type": "board-esp32-devkit-c-v4",
+        "id": "esp",
+        "top": -67.2,
+        "left": -43.16,
+        "attrs": {}
+      },
+      {
+        "type": "wokwi-hc-sr04",
+        "id": "ultrasonic1",
+        "top": -180.9,
+        "left": -205.7,
+        "attrs": {
+          "distance": "400"
+        }
+      },
+      {
+        "type": "wokwi-servo",
+        "id": "servo1",
+        "top": 36.4,
+        "left": 153.6,
+        "attrs": {
+          "horn": "cross"
+        }
+      }
+    ],
+    "connections": [
+      [
+        "esp:TX",
+        "$serialMonitor:RX",
+        "",
+        []
+      ],
+      [
+        "esp:RX",
+        "$serialMonitor:TX",
+        "",
+        []
+      ],
+      [
+        "esp:GND.2",
+        "servo1:GND",
+        "#8f4814",
+        [
+          "h48",
+          "v192"
+        ]
+      ],
+      [
+        "esp:GND.1",
+        "ultrasonic1:GND",
+        "black",
+        [
+          "h0"
+        ]
+      ],
+      [
+        "servo1:PWM",
+        "esp:2",
+        "darkorange",
+        [
+          "h-67.2",
+          "v-86.2"
+        ]
+      ],
+      [
+        "ultrasonic1:TRIG",
+        "esp:14",
+        "green",
+        [
+          "v0"
+        ]
+      ],
+      [
+        "ultrasonic1:ECHO",
+        "esp:27",
+        "green",
+        [
+          "v0"
+        ]
+      ],
+      [
+        "esp:5V",
+        "bb1:17t.e",
+        "red",
+        [
+          "h0.15",
+          "v19.2"
+        ]
+      ],
+      [
+        "servo1:V+",
+        "bb1:17t.d",
+        "red",
+        [
+          "h-9.6",
+          "v9.7"
+        ]
+      ],
+      [
+        "ultrasonic1:VCC",
+        "bb1:17t.a",
+        "red",
+        [
+          "v201.6",
+          "h57.6"
+        ]
+      ]
+    ],
+    "dependencies": {}
+  }
