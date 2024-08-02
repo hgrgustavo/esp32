@@ -1,9 +1,8 @@
-#include<Servo.h>         
-#include<sensorDistancia.h>
+#include <E:\esp32\src\libs\servo\src\Servo.h>
+
 
 class servoMotor {
-    servoMotor();
-    sensorDistancia();
+    Servo servo = new Servo();
     static void anexar(int pin, int pulse_min, int pulse_max) {
         if(!servo.attached()) {
             servo.attach(pin, pulse_min, pulse_max);
