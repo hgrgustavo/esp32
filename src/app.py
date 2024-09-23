@@ -1,3 +1,19 @@
+# https://wokwi.com/projects/290964046833779209
+
+
+# hardware comm
+from hcsr04 import HCSR04
+
+sensor = HCSR04(trigger_pin=16, echo_pin=0)
+
+distance = sensor.distance_cm()
+
+print('Distance:', distance, 'cm')
+
+
+
+
+# app window
 from customtkinter import CTk, CTkLabel, CTkFont, CTkFrame, CTkImage
 from tkinter.ttk import Separator
 from os import path
