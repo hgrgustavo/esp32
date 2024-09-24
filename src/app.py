@@ -1,23 +1,13 @@
 # https://wokwi.com/projects/290964046833779209
 
 
-# hardware comm
-from hcsr04 import HCSR04
-
-sensor = HCSR04(trigger_pin=16, echo_pin=0)
-
-distance = sensor.distance_cm()
-
-print('Distance:', distance, 'cm')
 
 
-
-
-# app window
-from customtkinter import CTk, CTkLabel, CTkFont, CTkFrame, CTkImage
+from customtkinter import CTk, CTkLabel, CTkFont, CTkFrame, CTkImage, CTkButton
 from tkinter.ttk import Separator
 from os import path
 from PIL import Image
+from serial import read_serial
 
 
 # icons path
@@ -51,6 +41,16 @@ class App(CTk):
 
         self.distance_value = CTkLabel(self.table_frame, text="Valor", font=CTkFont(size=30))
         self.distance_value.place(relx=0.67, rely=0.4)
+
+        # refresh button
+        self.refresh_button = CTkButton(self, text="Refresh ⟲", command=self.update_distance)
+        self.refresh_button.place(relx=0.5, rely=0.6, anchor="s")
+
+    def update_distance(self):
+        self.distance_value.configure(text=read_serial())
+
+
+
 
 
 window = App()
