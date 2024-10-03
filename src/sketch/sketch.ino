@@ -20,7 +20,7 @@ void setup() {
 }
 
 void loop() {
-  if (distanceSensor.measureDistanceCm() < 35) {
+  if (distanceSensor.measureDistanceCm() < 25) {
     buzzer.sound(NOTE_D7, 300);
     buzzer.sound(NOTE_D7, 300);
     buzzer.end(20);
