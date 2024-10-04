@@ -7,3 +7,5 @@ class Cloud(Database):
         self.connect = connect(
             "sqlitecloud://csqp1t5zhk.sqlite.cloud:8860?apikey=YeDoJjGUmfMJJ6PmfURHmPw0URdkyUGMmZCbCnrN76s")
 
+        self.connect.execute(f"USE DATABASE {'sqlite3.db'};")
+
