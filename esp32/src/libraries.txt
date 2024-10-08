@@ -1,3 +1,0 @@
-
-HCSR04 ultrasonic sensor
-Buzzer
