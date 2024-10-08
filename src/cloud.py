@@ -1,11 +1,10 @@
 from sqlitecloud import connect
-from database import Database
 
-class Cloud(Database):
+
+class Cloud:
     def __init__(self):
         super().__init__()
         self.connect = connect(
-            "sqlitecloud://csqp1t5zhk.sqlite.cloud:8860?apikey=YeDoJjGUmfMJJ6PmfURHmPw0URdkyUGMmZCbCnrN76s")
+            "sqlitecloud://csqp1t5zhk.sqlite.cloud:8860/sqlite3.db?apikey=YeDoJjGUmfMJJ6PmfURHmPw0URdkyUGMmZCbCnrN76s")
 
-        self.connect.execute(f"USE DATABASE {'sqlite3.db'};")
-
+        self.cursor = self.connect.cursor()
