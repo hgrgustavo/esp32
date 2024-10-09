@@ -9,7 +9,6 @@ Buzzer buzzer(ioPin);
 UltraSonicDistanceSensor distanceSensor(trigPin, echoPin);
 
 
-
 void setup() {
   Serial.begin(300);
 }
